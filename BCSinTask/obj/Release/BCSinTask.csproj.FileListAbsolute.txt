@@ -1,0 +1,10 @@
+E:\work_ref\vs2013\BCSinTask\BCSinTask\bin\Release\BCSinTask.exe.config
+E:\work_ref\vs2013\BCSinTask\BCSinTask\bin\Release\BCSinTask.exe
+E:\work_ref\vs2013\BCSinTask\BCSinTask\bin\Release\BCSinTask.pdb
+E:\work_ref\vs2013\BCSinTask\BCSinTask\obj\Release\BCSinTask.AboutBox.resources
+E:\work_ref\vs2013\BCSinTask\BCSinTask\obj\Release\BCSinTask.mainForm.resources
+E:\work_ref\vs2013\BCSinTask\BCSinTask\obj\Release\BCSinTask.Properties.Resources.resources
+E:\work_ref\vs2013\BCSinTask\BCSinTask\obj\Release\BCSinTask.csproj.GenerateResource.Cache
+E:\work_ref\vs2013\BCSinTask\BCSinTask\obj\Release\BCSinTask.exe
+E:\work_ref\vs2013\BCSinTask\BCSinTask\obj\Release\BCSinTask.pdb
+E:\work_ref\vs2013\BCSinTask\BCSinTask\obj\Release\BCSinTask.csprojResolveAssemblyReference.cache
