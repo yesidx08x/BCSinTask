@@ -63,6 +63,7 @@
             this.ciTB = new System.Windows.Forms.TextBox();
             this.gnTB = new System.Windows.Forms.TextBox();
             this.miTB = new System.Windows.Forms.TextBox();
+            this.eyeBTN = new System.Windows.Forms.Button();
             this.mainTC = new System.Windows.Forms.TabControl();
             this.nodeTP = new System.Windows.Forms.TabPage();
             this.slaveTLP = new System.Windows.Forms.TableLayoutPanel();
@@ -153,12 +154,13 @@
             this.optTLP.Controls.Add(this.ciTB, 2, 4);
             this.optTLP.Controls.Add(this.gnTB, 2, 5);
             this.optTLP.Controls.Add(this.miTB, 6, 3);
+            this.optTLP.Controls.Add(this.eyeBTN, 6, 1);
             this.optTLP.Dock = System.Windows.Forms.DockStyle.Fill;
             this.optTLP.Location = new System.Drawing.Point(3, 3);
             this.optTLP.Name = "optTLP";
             this.optTLP.RowCount = 16;
             this.optTLP.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 12F));
-            this.optTLP.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 28F));
+            this.optTLP.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 34F));
             this.optTLP.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 28F));
             this.optTLP.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 28F));
             this.optTLP.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 28F));
@@ -182,7 +184,7 @@
             this.timeCB.AutoSize = true;
             this.timeCB.Checked = true;
             this.timeCB.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.timeCB.Location = new System.Drawing.Point(15, 186);
+            this.timeCB.Location = new System.Drawing.Point(15, 192);
             this.timeCB.Name = "timeCB";
             this.timeCB.Size = new System.Drawing.Size(108, 16);
             this.timeCB.TabIndex = 1;
@@ -206,7 +208,7 @@
             "50",
             "55",
             "59"});
-            this.timeCBB.Location = new System.Drawing.Point(131, 184);
+            this.timeCBB.Location = new System.Drawing.Point(131, 190);
             this.timeCBB.Name = "timeCBB";
             this.timeCBB.Size = new System.Drawing.Size(51, 20);
             this.timeCBB.TabIndex = 2;
@@ -215,7 +217,7 @@
             // 
             this.mintuesLBL.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.mintuesLBL.AutoSize = true;
-            this.mintuesLBL.Location = new System.Drawing.Point(196, 188);
+            this.mintuesLBL.Location = new System.Drawing.Point(196, 194);
             this.mintuesLBL.Name = "mintuesLBL";
             this.mintuesLBL.Size = new System.Drawing.Size(47, 12);
             this.mintuesLBL.TabIndex = 3;
@@ -226,7 +228,7 @@
             this.memoryCK.AutoSize = true;
             this.memoryCK.Checked = true;
             this.memoryCK.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.memoryCK.Location = new System.Drawing.Point(15, 295);
+            this.memoryCK.Location = new System.Drawing.Point(15, 301);
             this.memoryCK.Name = "memoryCK";
             this.memoryCK.Size = new System.Drawing.Size(78, 16);
             this.memoryCK.TabIndex = 9;
@@ -247,7 +249,7 @@
             "30",
             "40",
             "50"});
-            this.memoryCBB.Location = new System.Drawing.Point(131, 296);
+            this.memoryCBB.Location = new System.Drawing.Point(131, 302);
             this.memoryCBB.Name = "memoryCBB";
             this.memoryCBB.Size = new System.Drawing.Size(51, 20);
             this.memoryCBB.TabIndex = 7;
@@ -256,7 +258,7 @@
             // 
             this.memoryLBL.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.memoryLBL.AutoSize = true;
-            this.memoryLBL.Location = new System.Drawing.Point(196, 300);
+            this.memoryLBL.Location = new System.Drawing.Point(196, 306);
             this.memoryLBL.Name = "memoryLBL";
             this.memoryLBL.Size = new System.Drawing.Size(11, 12);
             this.memoryLBL.TabIndex = 12;
@@ -276,7 +278,7 @@
             "30",
             "40",
             "50"});
-            this.cpuCBB.Location = new System.Drawing.Point(131, 268);
+            this.cpuCBB.Location = new System.Drawing.Point(131, 274);
             this.cpuCBB.Name = "cpuCBB";
             this.cpuCBB.Size = new System.Drawing.Size(51, 20);
             this.cpuCBB.TabIndex = 6;
@@ -286,7 +288,7 @@
             this.cpuCK.AutoSize = true;
             this.cpuCK.Checked = true;
             this.cpuCK.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.cpuCK.Location = new System.Drawing.Point(15, 267);
+            this.cpuCK.Location = new System.Drawing.Point(15, 273);
             this.cpuCK.Name = "cpuCK";
             this.cpuCK.Size = new System.Drawing.Size(78, 16);
             this.cpuCK.TabIndex = 8;
@@ -297,7 +299,7 @@
             // 
             this.cpuLBL.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.cpuLBL.AutoSize = true;
-            this.cpuLBL.Location = new System.Drawing.Point(196, 272);
+            this.cpuLBL.Location = new System.Drawing.Point(196, 278);
             this.cpuLBL.Name = "cpuLBL";
             this.cpuLBL.Size = new System.Drawing.Size(11, 12);
             this.cpuLBL.TabIndex = 11;
@@ -308,7 +310,7 @@
             this.gpuCK.AutoSize = true;
             this.gpuCK.Checked = true;
             this.gpuCK.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.gpuCK.Location = new System.Drawing.Point(15, 239);
+            this.gpuCK.Location = new System.Drawing.Point(15, 245);
             this.gpuCK.Name = "gpuCK";
             this.gpuCK.Size = new System.Drawing.Size(78, 16);
             this.gpuCK.TabIndex = 4;
@@ -329,7 +331,7 @@
             "30",
             "40",
             "50"});
-            this.gpuCBB.Location = new System.Drawing.Point(131, 240);
+            this.gpuCBB.Location = new System.Drawing.Point(131, 246);
             this.gpuCBB.Name = "gpuCBB";
             this.gpuCBB.Size = new System.Drawing.Size(51, 20);
             this.gpuCBB.TabIndex = 5;
@@ -338,7 +340,7 @@
             // 
             this.gpuLBL.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.gpuLBL.AutoSize = true;
-            this.gpuLBL.Location = new System.Drawing.Point(196, 244);
+            this.gpuLBL.Location = new System.Drawing.Point(196, 250);
             this.gpuLBL.Name = "gpuLBL";
             this.gpuLBL.Size = new System.Drawing.Size(11, 12);
             this.gpuLBL.TabIndex = 10;
@@ -350,7 +352,7 @@
             this.label2.AutoSize = true;
             this.optTLP.SetColumnSpan(this.label2, 2);
             this.label2.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label2.Location = new System.Drawing.Point(15, 212);
+            this.label2.Location = new System.Drawing.Point(15, 218);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(135, 19);
             this.label2.TabIndex = 14;
@@ -362,7 +364,7 @@
             this.label1.AutoSize = true;
             this.optTLP.SetColumnSpan(this.label1, 2);
             this.label1.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label1.Location = new System.Drawing.Point(15, 156);
+            this.label1.Location = new System.Drawing.Point(15, 162);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(163, 19);
             this.label1.TabIndex = 13;
@@ -403,20 +405,19 @@
             this.logTB.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.optTLP.SetColumnSpan(this.logTB, 6);
             this.logTB.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.logTB.Location = new System.Drawing.Point(15, 351);
+            this.logTB.Location = new System.Drawing.Point(15, 357);
             this.logTB.Multiline = true;
             this.logTB.Name = "logTB";
             this.logTB.ReadOnly = true;
             this.logTB.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.logTB.Size = new System.Drawing.Size(378, 173);
+            this.logTB.Size = new System.Drawing.Size(378, 167);
             this.logTB.TabIndex = 18;
-            this.logTB.TextChanged += new System.EventHandler(this.logTB_TextChanged);
             // 
             // informationLBL
             // 
             this.informationLBL.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.informationLBL.AutoSize = true;
-            this.informationLBL.Location = new System.Drawing.Point(15, 336);
+            this.informationLBL.Location = new System.Drawing.Point(15, 342);
             this.informationLBL.Name = "informationLBL";
             this.informationLBL.Size = new System.Drawing.Size(77, 12);
             this.informationLBL.TabIndex = 19;
@@ -424,7 +425,7 @@
             // 
             // aboutBTN
             // 
-            this.aboutBTN.Location = new System.Drawing.Point(319, 323);
+            this.aboutBTN.Location = new System.Drawing.Point(319, 329);
             this.aboutBTN.Name = "aboutBTN";
             this.aboutBTN.Size = new System.Drawing.Size(74, 22);
             this.aboutBTN.TabIndex = 20;
@@ -436,7 +437,7 @@
             // 
             this.akiLBL.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.akiLBL.AutoSize = true;
-            this.akiLBL.Location = new System.Drawing.Point(15, 20);
+            this.akiLBL.Location = new System.Drawing.Point(15, 23);
             this.akiLBL.Name = "akiLBL";
             this.akiLBL.Size = new System.Drawing.Size(83, 12);
             this.akiLBL.TabIndex = 21;
@@ -446,7 +447,7 @@
             // 
             this.aksLBL.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.aksLBL.AutoSize = true;
-            this.aksLBL.Location = new System.Drawing.Point(15, 48);
+            this.aksLBL.Location = new System.Drawing.Point(15, 54);
             this.aksLBL.Name = "aksLBL";
             this.aksLBL.Size = new System.Drawing.Size(107, 12);
             this.aksLBL.TabIndex = 22;
@@ -456,7 +457,7 @@
             // 
             this.epLBL.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.epLBL.AutoSize = true;
-            this.epLBL.Location = new System.Drawing.Point(15, 76);
+            this.epLBL.Location = new System.Drawing.Point(15, 82);
             this.epLBL.Name = "epLBL";
             this.epLBL.Size = new System.Drawing.Size(59, 12);
             this.epLBL.TabIndex = 23;
@@ -466,7 +467,7 @@
             // 
             this.ciLBL.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.ciLBL.AutoSize = true;
-            this.ciLBL.Location = new System.Drawing.Point(15, 104);
+            this.ciLBL.Location = new System.Drawing.Point(15, 110);
             this.ciLBL.Name = "ciLBL";
             this.ciLBL.Size = new System.Drawing.Size(65, 12);
             this.ciLBL.TabIndex = 24;
@@ -476,7 +477,7 @@
             // 
             this.gnLBL.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.gnLBL.AutoSize = true;
-            this.gnLBL.Location = new System.Drawing.Point(15, 132);
+            this.gnLBL.Location = new System.Drawing.Point(15, 138);
             this.gnLBL.Name = "gnLBL";
             this.gnLBL.Size = new System.Drawing.Size(65, 12);
             this.gnLBL.TabIndex = 25;
@@ -486,7 +487,7 @@
             // 
             this.miLBL.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.miLBL.AutoSize = true;
-            this.miLBL.Location = new System.Drawing.Point(239, 76);
+            this.miLBL.Location = new System.Drawing.Point(239, 82);
             this.miLBL.Name = "miLBL";
             this.miLBL.Size = new System.Drawing.Size(53, 12);
             this.miLBL.TabIndex = 26;
@@ -496,7 +497,7 @@
             // 
             this.akiTB.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.optTLP.SetColumnSpan(this.akiTB, 4);
-            this.akiTB.Location = new System.Drawing.Point(131, 15);
+            this.akiTB.Location = new System.Drawing.Point(131, 18);
             this.akiTB.Name = "akiTB";
             this.akiTB.PasswordChar = '#';
             this.akiTB.Size = new System.Drawing.Size(182, 21);
@@ -507,7 +508,7 @@
             // 
             this.aksTB.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.optTLP.SetColumnSpan(this.aksTB, 5);
-            this.aksTB.Location = new System.Drawing.Point(131, 43);
+            this.aksTB.Location = new System.Drawing.Point(131, 49);
             this.aksTB.Name = "aksTB";
             this.aksTB.PasswordChar = '*';
             this.aksTB.Size = new System.Drawing.Size(262, 21);
@@ -518,7 +519,7 @@
             // 
             this.epTB.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.optTLP.SetColumnSpan(this.epTB, 2);
-            this.epTB.Location = new System.Drawing.Point(131, 71);
+            this.epTB.Location = new System.Drawing.Point(131, 77);
             this.epTB.Name = "epTB";
             this.epTB.Size = new System.Drawing.Size(100, 21);
             this.epTB.TabIndex = 29;
@@ -528,7 +529,7 @@
             // 
             this.ciTB.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.optTLP.SetColumnSpan(this.ciTB, 4);
-            this.ciTB.Location = new System.Drawing.Point(131, 99);
+            this.ciTB.Location = new System.Drawing.Point(131, 105);
             this.ciTB.Name = "ciTB";
             this.ciTB.Size = new System.Drawing.Size(182, 21);
             this.ciTB.TabIndex = 30;
@@ -538,7 +539,7 @@
             // 
             this.gnTB.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.optTLP.SetColumnSpan(this.gnTB, 2);
-            this.gnTB.Location = new System.Drawing.Point(131, 127);
+            this.gnTB.Location = new System.Drawing.Point(131, 133);
             this.gnTB.Name = "gnTB";
             this.gnTB.Size = new System.Drawing.Size(119, 21);
             this.gnTB.TabIndex = 31;
@@ -547,11 +548,22 @@
             // miTB
             // 
             this.miTB.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.miTB.Location = new System.Drawing.Point(319, 71);
+            this.miTB.Location = new System.Drawing.Point(319, 77);
             this.miTB.Name = "miTB";
             this.miTB.Size = new System.Drawing.Size(74, 21);
             this.miTB.TabIndex = 32;
             this.miTB.Text = "100";
+            // 
+            // eyeBTN
+            // 
+            this.eyeBTN.Image = ((System.Drawing.Image)(resources.GetObject("eyeBTN.Image")));
+            this.eyeBTN.Location = new System.Drawing.Point(319, 15);
+            this.eyeBTN.Name = "eyeBTN";
+            this.eyeBTN.Size = new System.Drawing.Size(32, 28);
+            this.eyeBTN.TabIndex = 33;
+            this.eyeBTN.UseVisualStyleBackColor = true;
+            this.eyeBTN.MouseDown += new System.Windows.Forms.MouseEventHandler(this.eyeBTN_MouseDown);
+            this.eyeBTN.MouseUp += new System.Windows.Forms.MouseEventHandler(this.eyeBTN_MouseUp);
             // 
             // mainTC
             // 
@@ -1070,6 +1082,7 @@
         private System.Windows.Forms.TextBox miTB;
         private System.Windows.Forms.Timer timer2;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Button eyeBTN;
     }
 }
 

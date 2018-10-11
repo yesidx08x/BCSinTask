@@ -26,7 +26,7 @@ namespace BCSinTask
         }
         Thread cpuThread;
         Thread ramThread;
-        //Thread gpuThread;
+        Thread gpuThread;
         private int CheckUpDateLock=0;
         // 定义数据检查Timer
         private static object LockObject = new Object();
@@ -292,18 +292,6 @@ namespace BCSinTask
         delegate void SetLabelTextDeleC(float value);
         delegate void SetLabelTextDeleG(float value);
         delegate void SetLabelTextDeleR(float value);
-        private void ThreadForGpuView(object obj)
-        {
-            PerformanceCounter pcGpuLoad = (PerformanceCounter)obj;
-            SetLabelTextDeleG setTextDele = new SetLabelTextDeleG(SetLabelTextG);
-            while (true)
-            {
-                Thread.Sleep(1000);
-                float cpuLoad = pcGpuLoad.NextValue();
-                //label2.Text = cpuLoad + "%";
-                gpuL.Invoke(setTextDele, new object[] { cpuLoad });
-            }
-        }
         private void ThreadForCpuView(object obj)
         {
             PerformanceCounter pcCpuLoad = (PerformanceCounter)obj;
@@ -325,6 +313,44 @@ namespace BCSinTask
                 Thread.Sleep(2000);
                 float ramLoad = pcRamLoad.NextValue();
                 memoryL.Invoke(setTextDele, new object[] { ramLoad });
+            }
+        }
+        private void ThreadForGpuView(object obj)
+        {
+            //PerformanceCounter pcRamLoad = (PerformanceCounter)obj;
+            SetLabelTextDeleG setTextDele = new SetLabelTextDeleG(SetLabelTextG);
+            while (true)
+            {
+                Thread.Sleep(2000);
+                
+             string[] xLineA = this.logTB.Text.Split('\n');
+            if (xLineA.Length > 8)
+            {
+                try
+                {
+                    for(int i=xLineA.Length-2;i>0;i--)
+                    {
+                        if (xLineA[i] != "")
+                        {
+                            string[] smL = Regex.Split(xLineA[xLineA.Length - 2], "\\s+", RegexOptions.IgnoreCase);
+
+                            //MessageBox.Show(smL[2]);
+                            if (!charClass.isNumber(smL[2]))
+                            {
+                                float gpuLoad = (float)Convert.ToDouble(smL[2]);
+                                gpuL.Invoke(setTextDele, new object[] { gpuLoad });
+                            }
+                            break;
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    //MessageBox.Show(ex.ToString());
+                }
+            }
+            
+                
             }
         }
         private void SetLabelTextG(float value)
@@ -377,6 +403,10 @@ namespace BCSinTask
             bw.ProgressChanged += new ProgressChangedEventHandler(bw_UpdateProgress);
             bw.RunWorkerCompleted += new RunWorkerCompletedEventHandler(bw_RunWorkerCompleted);
             bw.RunWorkerAsync(cmdFile); //括号里加传递的参数
+            ParameterizedThreadStart p = new ParameterizedThreadStart(ThreadForGpuView);
+            gpuThread = new Thread(ThreadForGpuView);
+            gpuThread.IsBackground = true;
+            gpuThread.Start();
         }
         private void cpuUsage()
         {
@@ -697,7 +727,7 @@ namespace BCSinTask
             }
 
         }
-
+        /*
         private void logTB_TextChanged(object sender, EventArgs e)
         {
             string[] xLineA = this.logTB.Text.Split('\n');
@@ -727,7 +757,7 @@ namespace BCSinTask
             }
             
         }
-
+        */
         private void notifyIcon1_MouseClick(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Right)
@@ -784,6 +814,16 @@ namespace BCSinTask
         /// <param name="e"></param>
         private void applyBTN_Click(object sender, EventArgs e)
         {
+            if (akiTB.Text == "1111111111111111")
+            {
+                MessageBox.Show("Error:access_key_id填写错误！", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            if (aksTB.Text == "000000000000000000000000000000")
+            {
+                MessageBox.Show("Error:access_key_secret填写错误！", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             //configFile
             checkArg();
             string[] configTxtA = { "access_key_id#"+decClass.Encrypt(akiTB.Text, "20170214", salt),
@@ -905,6 +945,16 @@ namespace BCSinTask
                 {
                     return;
                 }
+                if (akiTB.Text == "1111111111111111" )
+                {
+                    MessageBox.Show("Error:access_key_id填写错误！", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                if ( aksTB.Text == "000000000000000000000000000000")
+                {
+                    MessageBox.Show("Error:access_key_secret填写错误！", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
                 cmdFile = "\"X:\\TD\\new\\production\\studio\\tools\\Python27\\python\" " + pyFile + 
                     " -c="+ciTB.Text + " -g="+gnTB.Text + " -m="+miTB.Text + " -k="+akiTB.Text + " -s="+aksTB.Text + " -e="+epTB.Text;
                 //MessageBox.Show(cmdFile);
@@ -934,7 +984,7 @@ namespace BCSinTask
         /// <param name="e"></param>
         private void timer2_Tick(object sender, EventArgs e)
         {
-            logTB_TextChanged(sender, e);
+            //logTB_TextChanged(sender, e);
             //1.读取并加载设置
             Dictionary<string,string> oldArgDict =freeDict;
             //readCfg();
@@ -1019,6 +1069,23 @@ namespace BCSinTask
                 }
             }
             return true;
+        }
+
+        private void eyeBTN_MouseDown(object sender, MouseEventArgs e)
+        {
+            /*三种方法都可以
+            this.textBox1.PasswordChar = new char();
+            this.textBox1.PasswordChar = '\0';
+            this.textBox1.PasswordChar = default(char);
+             */
+            akiTB.PasswordChar = '\0';
+            aksTB.PasswordChar = '\0';
+        }
+
+        private void eyeBTN_MouseUp(object sender, MouseEventArgs e)
+        {
+            akiTB.PasswordChar = '#';
+            aksTB.PasswordChar = '*';
         }
     }
 }

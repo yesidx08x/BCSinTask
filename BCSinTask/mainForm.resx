@@ -117,13 +117,28 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="eyeBTN.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABkAAAAQCAYAAADj5tSrAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
+        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAB3RJTUUH3gUBFDYno4UQWAAAAd9JREFU
+        OE+V1MtLVVEUgPGriEpGMwc2sHLUA0IIRCjEUnDgUHDUrCbNMh1k0yaViAql6LBZkxz4CBRBwZoE4h/Q
+        U4gGoURQRk+/L866bI+3e3HBj3vPPmevs/fZa+9ChTiNm5jHW3zFz+z3HRYxiHOowqHC5KN4g1/4W8Zv
+        +MIJ+LKKUYtreIU0kSP/nGsrxdneQB1KxlE8wHfYwRH6u4xuXID3d5EmDvH8D4zjGPZFPcbwBz64DpN/
+        xHlEOMJZpMnDClaT60kcQTFuwQX1pklO4gk2kR/RXUSi1FOcgP28dmbD+FcQXXDE3lhCE6phRW2jDREN
+        WECaPNi3Bo2wr22f0IvC86xhC602ZDEN21+gD5ezNr95JE49RpTxWbyG7Rs2mMSL/EuuIsrXxN+y/6W4
+        ltcRceAlVk7+cxlOO2ZZyUuk/eZge/FzGfmFb4bRifdIE+Z9QA+M40gX/g6KJ4ElbG1HCfsJr8AHLmEN
+        MYjgtTN1rYwO+Fzcn4KFsi/cjCOIzbgDF/oiTsHFv4cZ3Ec/WtCOR/DT2M/184g5sBkjPFZcwFg0fYEz
+        c3NZ9wO4jYdw06bHjWdY2WMljfSAjOPif/zEhzog03A9zsCRuwFNZBlb1v5aEM8whDJHfaGwBwvd2Pcn
+        lvI8AAAAAElFTkSuQmCC
+</value>
+  </data>
   <metadata name="notifyIcon1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
   <metadata name="notifyCMS.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>135, 17</value>
   </metadata>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="showTSMI.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
