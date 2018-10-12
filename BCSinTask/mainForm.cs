@@ -45,6 +45,7 @@ namespace BCSinTask
         private Dictionary<string, string> logDict = new Dictionary<string, string>();
         private infoClass stateInfoClass = new infoClass();
         private Computer myPC;
+        private int TimeZone=0;
 
         public string[] maintxt = new string[5] { "", "", "", "", "" };
         private StringBuilder result = new StringBuilder();
@@ -89,7 +90,7 @@ namespace BCSinTask
         private void mainForm_Load(object sender, EventArgs e)
         {
             //启动检查设置时间
-            timer1.Interval = 15000;
+            timer1.Interval = 30000;
             timer1.Enabled = true;
             timer1.Start();
             timer1.Tick += new System.EventHandler(this.timer1_Tick);
@@ -150,7 +151,7 @@ namespace BCSinTask
                 {
                     if (line.Contains("access_key_id#"))
                         akiTB.Text = decClass.Decrypt(line.Split('#')[1].Trim(), "20170214", salt);
-                    else if (line.Contains("access_key_secre#"))
+                    else if (line.Contains("access_key_secret#"))
                         aksTB.Text = decClass.Decrypt(line.Split('#')[1].Trim(), "20170214", salt);
                     else if (line.Contains("endpoint#"))
                         epTB.Text = line.Split('#')[1];
@@ -573,7 +574,7 @@ namespace BCSinTask
                     {
 
                         string str = "";
-                        for (int i = zStrL.Length-300; i < zStrL.Length; i++)
+                        for (int i = zStrL.Length - 300; i < zStrL.Length; i++)
                         {
                             str = zStrL[i];
                             zStr += str + "\n";
@@ -596,6 +597,7 @@ namespace BCSinTask
                 // Action<string> actionDelegate = delegate(string txt) { this.label2.Text = txt; };
                 this.logTB.BeginInvoke(actionDelegate, result.ToString());
             }
+
 
         }
 
@@ -620,46 +622,75 @@ namespace BCSinTask
                     {
                         string xStr = "";
                         string[] xStrL = x.ToString().Split('\n');
+                        string str0 = "";
                         if (xStrL.Length > 300)
                         {
 
-                            string str = "";
-                            for (int i = xStrL.Length-300; i < xStrL.Length; i++)
+                            
+                            for (int i = xStrL.Length - 300; i < xStrL.Length; i++)
                             {
-                                str = xStrL[i];
-                                xStr += str + "\n";
+                                int len = xStrL[i].Length;
+                                if (len == 30)
+                                {
+                                    str0 = xStrL[i];
+                                    xStr += str0 + "\n";
+                                }
                             }
 
                         }
                         else
-                            xStr = x.ToString();
+                        {
+                            for (int i = 0; i < xStrL.Length; i++)
+                            {
+                                int len = xStrL[i].Length;
+                                if (len == 30)
+                                {
+                                    str0 = xStrL[i];
+                                    xStr += str0 + "\n";
+                                }
+                            }
+                        }
                         this.logTB.Text = xStr;
                     };
                     // 或者
                     // Action<string> actionDelegate = delegate(string txt) { this.label2.Text = txt; };
                     string[] zStrL = result.ToString().Split('\n');
                     string zStr = "";
-
+                    string str1 = "";
                     if (zStrL.Length > 300)
                     {
 
-                        string str = "";
-                        for (int i = zStrL.Length-300; i < zStrL.Length; i++)
+                        
+                        for (int i = zStrL.Length - 300; i < zStrL.Length; i++)
                         {
-                            str = zStrL[i];
-                            zStr += str + "\n";
+                            int len = zStrL[i].Length;
+                            if (len == 30)
+                            {
+                                str1 = zStrL[i];
+                                zStr += str1 + "\n";
+                            }
                         }
                     }
                     else
-                        zStr = result.ToString();
+                    {
+                        for (int i = 0; i < zStrL.Length; i++)
+                        {
+                            int len = zStrL[i].Length;
+                            if (len == 30)
+                            {
+                                str1 = zStrL[i];
+                                zStr += str1 + "\n";
+                            }
+                        }
+                    }
                     this.logTB.BeginInvoke(actionDelegate, zStr);
-                    
+
                 }
                 catch (Exception ex)
                 {
 
                 }
-                
+
             }
             else
             {
@@ -975,7 +1006,28 @@ namespace BCSinTask
         }
         private void timer1_Tick(object sender,EventArgs e)
         {
-            readCfg();
+            
+            
+            TimeZone++;
+            if(TimeZone %5 == 0)
+            {
+                readCfg();
+                readConfig();
+            }
+            /*
+            if (TimeZone % 20 == 0)
+            {
+                gpuThread.Abort();
+                logTB.Text = "";
+                try
+                {
+                    gpuUsage();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("无法处理你的GPU!\r\n" + ex.ToString());
+                }
+            }*/
         }
         /// <summary>
         /// 检查设置文件
